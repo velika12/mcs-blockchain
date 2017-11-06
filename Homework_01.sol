@@ -40,7 +40,7 @@ contract Homework_01 {
 	// Level 4 function
 	function setMessageForAPriceAndTransferAndBlockMessageChange(string _message, address _to, uint256 _periodInMinutes) payable {
 		if (msg.value >= limitEtherNum * 1 ether) {
-			if (blockingTimestamp == 0 || ((now - blockingTimestamp) >= _periodInMinutes * 1 minutes)) {
+			if ((now - blockingTimestamp) >= _periodInMinutes * 1 minutes) {
 				message = _message;
 				_to.transfer(msg.value);
 				
